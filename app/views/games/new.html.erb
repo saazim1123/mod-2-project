@@ -1,0 +1,20 @@
+<h1> New Game </h1>
+
+<%= form_for @game do |f| %>
+  <%=f.collection_select :category_id, Category.all, :id, :genre, :prompt => "Select a category" %> <br> <br>
+  <%= f.label :name %>
+  <%= f.text_field :title%> <br> <br>
+
+  <%= f.label :image%>
+  <%= f.file_field :game_image%>
+
+  <%= f.label :description %>
+  <%= f.text_area :description%><br><br>
+
+  <%= f.label :publisher %>
+  <%= f.text_field :publisher%> <br> <br>
+
+  
+
+  <%= f.button "Create Game"%>
+<% end %>
