@@ -7,6 +7,13 @@
 
 <p><%= @game.description%></p>
 
+<div>
+    <%= render @game.reviews %>
+</div>
+
+<div> 
+    <%= link_to 'Add Review', new_game_review_path(@game) %>
+</div>
 
 
 <%if user_signed_in? %>
@@ -15,3 +22,13 @@
             <%= link_to 'Delete', game_path(@game), method: :delete, data: { confirm: "Are you sure?"} %>
     <%end%>
 <%end%>
+
+<script>
+    $('.review-rating').raty({
+        readOnly: true,
+        score: function(){
+            return $(this).attr('data-score');
+        },
+        path '/assets/'
+    });
+</script>
