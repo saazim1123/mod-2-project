@@ -25,6 +25,36 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
  }
 
+ #footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+ }
+
+/* unvisited link */
+#footer a:link {
+    color: white;
+  }
+  
+  /* visited link */
+  #footer a:visited {
+    color: white;
+  }
+  
+  /* mouse over link */
+  #footer a:hover {
+    color: white;
+  }
+  
+  /* selected link */
+  #footer a:active {
+    color: white;
+  }
+
  h1 {
      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
  }
@@ -47,13 +77,21 @@
 
 #game_list {
     list-style: none;
-    margin-top: 40px;
+    display: inline-block;
+    margin-top: 30px;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 
 #game_list span {
     border-radius: 25px;
     background-color: #adadad8a;
     padding: 10px;
+    display: inline;
+}
+
+#game_details {
+    display: inline-block;
 }
 
 #review {
@@ -65,6 +103,9 @@
     font-size: 20px;
 }
 
+#review_show_box {
+    padding-left: 15px;
+}
 // .navbar-header {
 
 // }

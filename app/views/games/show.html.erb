@@ -1,11 +1,27 @@
 <h1><%= @game.title%></h1>
 
+<div>
+    <% @game.genres.each do |genre| %>
+    <h2 id= "game_details"><%="| #{genre.name} |"%> </h2>
+    <% end %>
+</div>
+
+<div>
+    <h2>Available on the following platform(s):</h2>
+    <% @game.platforms.each do |platform| %>
+    <h2 id= "game_details"> <%= "| #{platform.name} |" %> </h2>
+    <% end %>
+</div>
+
 <div class ="row">
 
-    <div class = "col-md-4">
+    <div id= "review_show_box">
     <%= render @game.reviews %>
 
     <%if user_signed_in? %>
+            <% if @game.reviews.count == 0 %>
+            <h3>Be the first the review this game!</h3>
+            <% end %>
         <h3><%= link_to "Write a review for #{@game.title}", new_game_review_path(@game) %></h3>
         <%if Review.find_by(user_id: current_user.id) %>    
         <%end%>
@@ -16,3 +32,8 @@
 </div>
 
 
+<footer id= "footer">
+    <% unless user_signed_in? %>
+            <h3 id="footer_link_text"><%= link_to "Sign Up", new_user_registration_path%> / <%= link_to "Log In", new_user_session_path%> to write a review!</h3>
+    <% end %>
+</footer>
