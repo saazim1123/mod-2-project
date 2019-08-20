@@ -47,10 +47,16 @@
             </ul>
           </li>
 
-          <%if user_signed_in?%>
-          <li id = "nav_button">  <%= link_to "Add Game", new_game_path(@game) %> </li>
-          <%end%>
-          
+          <li id = "nav_button" class = "dropdown"> <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown" role = "button" aria-expanded = "false"> Platforms <span class = "caret"> </span></a> 
+            <ul class = "dropdown-menu" role ="menu "> 
+              <% Platform.unique_platforms.each do |platform| %>
+                <li>
+                  <%= link_to platform.platforms, games_path(platform: platform.platforms) %>
+                  
+                </li>
+              <%end%>
+            </ul>
+          </li>
         </ul>
 
       </div>
