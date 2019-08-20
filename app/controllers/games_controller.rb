@@ -6,20 +6,13 @@ class GamesController < ApplicationController
             @games = Game.all
         else
             @genre_id = Genre.find_by(name: params[:genre])
-            @games = Game.where(id: @genre_id.game_id)
+            @games = Game.all.select{|g| g.genres[0].name == @genre_id.name}
         end
     end
 
     def show
         
     end
-
-    def destroy
-        R
-        redirect_to games_path
-    end
-
-  
 
     private
         def game_params

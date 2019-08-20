@@ -1,10 +1,10 @@
-<h1>Games</h1>
+<h1 id="games_header">Games</h1>
 <h3><%=params[:genre]%></h3>
 <% if @games.count == 0%>
     <h4>There are no games in this category</h4>
 <% else %>
     <% @games.each do |game| %>
-    <li> <%= link_to game.title, game_path(game) %> </li>
+    <li id="game_list"><span><%= link_to game.title, game_path(game) %></span></li>
     <% end %>
     <br>
 <% end %>
