@@ -4,7 +4,7 @@
     <h4>There are no games in this category</h4>
 <% else %>
     <% @games.each do |game| %>
-    <li id="game_list"><span><%= link_to game.title, game_path(game) %></span></li>
+    <div id="game_list"><span><%= link_to game.title, game_path(game) %></span></div>
     <% end %>
     <br>
 <% end %>
