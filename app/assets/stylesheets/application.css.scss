@@ -28,8 +28,41 @@
      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
  }
 
- #nav_button {
-     background-color: #adadad;
-     border-radius: 25px;
-     margin: 10px;
- }
+ #games_header {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: rgba(255, 255, 255, 0.747);
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+#nav_button {
+    background-color: #adadad77;
+    border-radius: 25px;
+    margin: 10px;
+}
+
+#game_list {
+    list-style: none;
+    margin-top: 40px;
+}
+
+#game_list span {
+    border-radius: 25px;
+    background-color: #adadad8a;
+    padding: 10px;
+}
+
+.navbar-header {
+
+}
+
+.nav navbar-nav {
+
+}
+
+.nav navbar-nav navbar-right {
+    
+}
