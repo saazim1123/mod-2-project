@@ -6,12 +6,8 @@
     <div class = "col-md-4">
 
     <%if user_signed_in? %>
-    <%if Review.find_by(user_id: current_user.id) %>    
-
+    <%= link_to 'Add Review', new_game_review_path(@game) %> 
     
-            <%= link_to 'Add Review', new_game_review_path(@game) %> 
-    
-     <%end%>
     
     <%end%>
 
