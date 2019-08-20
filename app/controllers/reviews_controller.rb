@@ -1,8 +1,10 @@
 class ReviewsController < ApplicationController
     before_action :find_game
     before_action :find_review, only: [:edit, :update, :destroy]
+
     def new
         @review = Review.new
+        
     end
 
     def create
@@ -19,9 +21,8 @@ class ReviewsController < ApplicationController
     def edit
         
     end
-    
+
     def update
-        
         if @review.update(review_params)
             redirect_to game_path(@game)
         else
@@ -33,11 +34,13 @@ class ReviewsController < ApplicationController
         @review.destroy
         redirect_to game_path(@game)
     end
+        
+    
 
     private
 
     def review_params
-        params.require(:review).permit(:rating, :comment)
+        params.require(:review).permit(:rating, :content)
     end
 
     def find_game

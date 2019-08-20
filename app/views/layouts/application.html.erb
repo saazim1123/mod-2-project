@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>GameReview</title>
+    <title>JunkFood - Gaming</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -9,13 +9,13 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body id = "box">
     <nav>
       <div class = "container">
 
         
 
-        <div class = "navbar-header">
+        <div id = "nav_button" class = "navbar-header">
           <%= link_to 'All Games', games_path, class: "navbar-brand" %>
           
         </div>
@@ -24,12 +24,12 @@
           
           
           <% if user_signed_in? %>
-           <li>  <%= link_to current_user.email , games_path %>  </li>
-           <li> <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %> </li>
+           <li id = "nav_button">  <%= link_to current_user.email , games_path %>  </li>
+           <li id = "nav_button"> <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %> </li>
            
           <%else%>
-           <li> <%= link_to 'Log In', new_user_session_path %> </li>
-           <li> <%= link_to 'Sign Up', new_user_registration_path %> </li>
+           <li id = "nav_button"> <%= link_to 'Log In', new_user_session_path %> </li>
+           <li id = "nav_button"> <%= link_to 'Sign Up', new_user_registration_path %> </li>
           <% end %>
          
         </ul>
@@ -37,18 +37,18 @@
        
 
         <ul class = "nav navbar-nav navbar-right">
-          <li class = "dropdown"> <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown" role = "button" aria-expanded = "false"> Categories <span class = "caret"> </span></a> 
+          <li id = "nav_button" class = "dropdown"> <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown" role = "button" aria-expanded = "false"> Genres <span class = "caret"> </span></a> 
             <ul class = "dropdown-menu" role ="menu "> 
-              <% Category.all.each do |category| %>
+              <% Genre.all.each do |genre| %>
                 <li>
-                  <%= link_to category.genre, games_path(category: category.genre) %>
+                  <%= link_to genre.name, games_path(genre: genre.name) %>
                 </li>
               <%end%>
             </ul>
           </li>
 
           <%if user_signed_in?%>
-          <li>  <%= link_to "Add Game", new_game_path(@game) %> </li>
+          <li id = "nav_button">  <%= link_to "Add Game", new_game_path(@game) %> </li>
           <%end%>
           
         </ul>
@@ -60,6 +60,5 @@
     <p class="alert"><%= alert %></p>
 
     <%= yield %>
-   
   </body>
 </html>
