@@ -21,7 +21,9 @@ end
 games_2018.each do |game|
     g = Game.create(title: game["Title"])
     p = game["Platform(s)"].split(", ")
+    gen = game["Genre(s)"].split(", ")
     p.each{|platform| GamePlatform.create(game_id: g.id, platform_id: Platform.find_or_create_by(name: platform).id)}
+    gen.each{|genre| GameGenre.create(game_id: g.id, genre_id: Genre.find_or_create_by(name: genre).id)}
 end
 
 
