@@ -1,35 +1,64 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
- @import "bootstrap-sprockets";
- @import "bootstrap";
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
- #box {
-    margin-top: 2%;
-    margin-left: 5%;
-    margin-right: 5%;
-    background-color: #e1e8e3;
-    font-family: Georgia, 'Times New Roman', Times, serif;
- }
+#box {
+margin-top: 2%;
+margin-left: 5%;
+margin-right: 5%;
+background-color: #e1e8e3;
+font-family: Georgia, 'Times New Roman', Times, serif;
+}
 
- h1 {
-     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
- }
+#games_header {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: rgba(255, 255, 255, 0.747);
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
 
- #nav_button {
-     background-color: #adadad;
-     border-radius: 25px;
-     margin: 10px;
- }
+#nav_button {
+    background-color: #adadad77;
+    border-radius: 25px;
+    margin: 10px;
+}
+
+#game_list {
+    list-style: none;
+    margin-top: 40px;
+}
+
+#game_list span {
+    border-radius: 25px;
+    background-color: #adadad8a;
+    padding: 10px;
+}
+
+.navbar-header {
+
+}
+
+.nav navbar-nav {
+
+}
+
+.nav navbar-nav navbar-right {
+    
+}
