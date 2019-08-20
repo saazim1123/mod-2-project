@@ -47,6 +47,18 @@
             </ul>
           </li>
 
+        <ul class = "nav navbar-nav navbar-right">
+          <li id = "nav_button" class = "dropdown"> <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown" role = "button" aria-expanded = "false"> Platforms <span class = "caret"> </span></a> 
+            <ul class = "dropdown-menu" role ="menu "> 
+              <% Platform.all.each do |platform| %>
+                <li>
+                  <%= link_to platform.name, games_path(platform: platform.name) %>
+                </li>
+              <%end%>
+            </ul>
+          </li>
+          
+
           <%if user_signed_in?%>
           <li id = "nav_button">  <%= link_to "Add Game", new_game_path(@game) %> </li>
           <%end%>

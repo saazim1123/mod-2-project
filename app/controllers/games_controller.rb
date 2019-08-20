@@ -2,11 +2,12 @@ class GamesController < ApplicationController
     before_action :find_game, only: [:show]
 
     def index
-        if params[:genre].blank?
+        if params[:genre].blank? && params[:platform].blank?
             @games = Game.all
-        else
-            @genre_id = Genre.find_by(name: params[:genre])
-            @games = Game.all.select{|g| g.genres[0].name == @genre_id.name}
+        elsif params[:platform].blank?
+            @games = Genre.find_by(name: params[:genre]).games
+        elsif params[:genre].blank? 
+            @games = Platform.find_by(name: params[:platform]).games
         end
     end
 
