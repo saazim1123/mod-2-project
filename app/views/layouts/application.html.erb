@@ -36,7 +36,7 @@
 
        
 
-        <ul class = "nav navbar-nav navbar-right">
+        <ul id= "dropdown_button" class = "nav navbar-nav navbar-right">
           <li id = "nav_button" class = "dropdown"> <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown" role = "button" aria-expanded = "false"> Genres <span class = "caret"> </span></a> 
             <ul class = "dropdown-menu" role ="menu "> 
               <% Genre.unique_genres.each do |genre| %>
@@ -46,21 +46,7 @@
               <%end%>
             </ul>
           </li>
-
-          <li id = "nav_button" class = "dropdown"> <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown" role = "button" aria-expanded = "false"> Platforms <span class = "caret"> </span></a> 
-            <ul class = "dropdown-menu" role ="menu "> 
-              <% Platform.unique_platforms.each do |platform| %>
-                <li>
-                  <%= link_to platform.platforms, games_path(platform: platform.platforms) %>
-                  
-                </li>
-              <%end%>
-            </ul>
-          </li>
         </ul>
-
-      </div>
-    </nav>
   
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
