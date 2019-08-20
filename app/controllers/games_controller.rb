@@ -12,7 +12,11 @@ class GamesController < ApplicationController
     end
 
     def show
-        
+        if @game.reviews.blank?
+            @average_review = "No Reviews have been added to this game"
+        else
+            @average_review = @game.reviews.average(:rating).round(2)
+        end
     end
 
     private
