@@ -1,0 +1,15 @@
+<p> <%= review.rating %></p>
+<p> <%= review.content %></p>
+<div class= "edit-delete-user">
+<%if user_signed_in? %>
+    <%if Review.find_by(user_id: current_user.id) %> <br>
+            <%= link_to 'Edit Review', edit_game_review_path(review.game, review) %> <br>
+            <%= link_to 'Delete Review', game_review_path(review.game, review), method: :delete, data: { confirm: "Are you sure?"} %>
+
+            
+            
+            
+    <%end%>
+</div><br>
+    
+<%end%>

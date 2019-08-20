@@ -1,17 +1,22 @@
 <h2><%= @game.title%></h2>
-<h3><%= @game.publisher%></h3>
 
-<p>Category: <%= @game.category.genre%></p>
+<div class ="row">
 
+    <%= render @game.reviews %>
+    <div class = "col-md-4">
 
+    <%if user_signed_in? %>
+    <%if Review.find_by(user_id: current_user.id) %>    
 
-<p><%= @game.description%></p>
-
-
-
-<%if user_signed_in? %>
-    <%if @game.user_id == current_user.id %>
-            <%= link_to 'Edit', edit_game_path(@game) %>
-            <%= link_to 'Delete', game_path(@game), method: :delete, data: { confirm: "Are you sure?"} %>
+    
+            <%= link_to 'Add Review', new_game_review_path(@game) %> 
+    
+     <%end%>
+    
     <%end%>
-<%end%>
+
+    </div>
+
+</div>
+
+

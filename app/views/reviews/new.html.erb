@@ -1,0 +1,11 @@
+<h1> New Review </h1>
+
+<%= form_for([@game, @game.reviews.build]) do |f| %>
+    <% f.label :rating %> Rating:  <br>
+    <%= f.number_field :rating%> <br> <br>
+
+    <% f.label :content %> Review: <br>
+    <%= f.text_area :content%> <br> <br>
+
+    <%= f.submit "Submit" %>
+<% end %>
