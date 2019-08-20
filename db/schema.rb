@@ -10,8 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2019_08_19_155251) do
+ActiveRecord::Schema.define(version: 2019_08_20_132018) do
+
+  create_table "game_genres", force: :cascade do |t|
+    t.integer "game_id"
+    t.integer "genre_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "game_platforms", force: :cascade do |t|
+    t.integer "game_id"
+    t.integer "platform_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "games", force: :cascade do |t|
     t.string "title"
@@ -24,7 +37,7 @@ ActiveRecord::Schema.define(version: 2019_08_19_155251) do
 
   create_table "platforms", force: :cascade do |t|
     t.integer "game_id"
-    t.string "platforms"
+    t.string "name"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -34,22 +47,6 @@ ActiveRecord::Schema.define(version: 2019_08_19_155251) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.integer "game_id"
-=======
-ActiveRecord::Schema.define(version: 2019_08_19_143338) do
-
-  create_table "games", force: :cascade do |t|
-    t.string "title"
-  end
-
-  create_table "genres", force: :cascade do |t|
-    t.integer "game_id"
-    t.string "name"
-  end
-
-  create_table "platforms", force: :cascade do |t|
-    t.integer "game_id"
-    t.string "platforms"
->>>>>>> master
   end
 
   create_table "users", force: :cascade do |t|
