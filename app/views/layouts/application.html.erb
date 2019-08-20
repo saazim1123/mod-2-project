@@ -52,6 +52,7 @@
               <% Platform.unique_platforms.each do |platform| %>
                 <li>
                   <%= link_to platform.platforms, games_path(platform: platform.platforms) %>
+                  
                 </li>
               <%end%>
             </ul>
