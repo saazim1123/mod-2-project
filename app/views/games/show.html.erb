@@ -1,18 +1,15 @@
-<h2><%= @game.title%></h2>
+<h1><%= @game.title%></h1>
 
 <div class ="row">
 
-    <%= render @game.reviews %>
     <div class = "col-md-4">
+    <%= render @game.reviews %>
 
     <%if user_signed_in? %>
-    <%= link_to 'Add Review', new_game_review_path(@game) %> 
-    
-    
+   <h3><%= link_to "Write a review for #{@game.title}", new_game_review_path(@game) %></h3>
     <%end%>
 
     </div>
-
 </div>
 
 

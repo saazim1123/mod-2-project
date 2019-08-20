@@ -17,6 +17,7 @@
  @import "bootstrap";
 
  #box {
+    background: url("../images/banner_01.png");
     margin-top: 2%;
     margin-left: 5%;
     margin-right: 5%;
@@ -55,14 +56,23 @@
     padding: 10px;
 }
 
-.navbar-header {
-
+#review {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
 }
 
-.nav navbar-nav {
-
+#review\ rating {
+    font-size: 20px;
 }
 
-.nav navbar-nav navbar-right {
+// .navbar-header {
+
+// }
+
+// .nav navbar-nav {
+
+// }
+
+// .nav navbar-nav navbar-right {
     
-}
+// }
