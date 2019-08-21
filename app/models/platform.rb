@@ -5,4 +5,12 @@ class Platform < ApplicationRecord
     # def self.unique_platforms
     #     Platform.all.uniq{|platform| platform.platforms}
     # end
+
+    def platform_name
+        Platform.all.each do |platform| 
+            
+            platform.name
+            
+          end
+    end
 end

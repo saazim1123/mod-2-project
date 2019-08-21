@@ -36,17 +36,33 @@
 
         <img id = "image_logo" src="../assets/junkfood_logo.png">
 
-          <ul id= "dropdown_button" class = "nav navbar-nav navbar-right">
-            <li id = "nav_button" class = "dropdown"> <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown" role = "button" aria-expanded = "false"> Genres <span class = "caret"> </span></a> 
-              <ul class = "dropdown-menu" role ="menu "> 
-                <% Genre.unique_genres.each do |genre| %>
-                  <li>
-                    <%= link_to genre.name, games_path(genre: genre.name) %>
-                  </li>
-                <%end%>
-              </ul>
-            </li>
-          </ul>
+        <ul id= "dropdown_button" class = "nav navbar-nav navbar-right">
+          <li id = "nav_button" class = "dropdown"> <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown" role = "button" aria-expanded = "false"> Genres <span class = "caret"> </span></a> 
+            <ul class = "dropdown-menu" role ="menu "> 
+              <% Genre.unique_genres.each do |genre| %>
+                <li>
+                  <%= link_to genre.name, games_path(genre: genre.name) %>
+                </li>
+              <%end%>
+            </ul>
+          </li>
+        </ul>
+
+        <ul class = "nav navbar-nav navbar-right">
+          <li id = "nav_button" class = "dropdown"> <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown" role = "button" aria-expanded = "false"> Platforms <span class = "caret"> </span></a> 
+            <ul class = "dropdown-menu" role ="menu "> 
+              <% Platform.all.each do |platform| %>
+                <li>
+                  <%= link_to platform.name, games_path(platform: platform.name) %>
+                </li>
+              <%end%>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+  
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
           <ul class = "nav navbar-nav navbar-right">
             <li id = "nav_button" class = "dropdown"> <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown" role = "button" aria-expanded = "false"> Platforms <span class = "caret"> </span></a> 
@@ -64,6 +80,7 @@
     
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
+
     <%= yield %>
       <footer id= "footer">
         <% unless user_signed_in? %>

@@ -1,0 +1,20 @@
+<h1> Custom Search </h1>
+<%= form_for @search, html: {class: "pure-form"} do |f| %>
+
+    <%= f.label :keyword %>:
+    <%= f.text_field :keyword %>
+
+    <%= f.label :genre %>:
+    <%= f.text_field :genre %>
+ 
+
+    <%= f.label :rating %>: 
+    <%= f.number_field :rating, in: 1..5 %> 
+
+    <%= f.submit "Search"%>
+
+<% end %>
+
+
+
+<%= link_to 'Back', games_path %>

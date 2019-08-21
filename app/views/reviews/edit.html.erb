@@ -2,8 +2,8 @@
 
 <%= form_for([@game, @review]) do |f|%>
 
-    <% f.label :rating %> Rating:  <br>
-    <%= f.number_field :rating%> <br> <br>
+    <% f.label :rating%> Rating:  <br>
+    <%= f.number_field :rating, in: 1..5%> <br> <br>
 
     <% f.label :content %> Review: <br>
     <%= f.text_area :content%> <br> <br>

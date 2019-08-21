@@ -5,4 +5,12 @@ class Game < ApplicationRecord
     has_many :genres, through: :game_genres
     has_many :reviews
     has_many :users, through: :reviews
+    
+    def self.search(search)
+        if search
+            Game.where("title LIKE ?", "%#{search}%")
+        else
+            Game.all
+        end
+    end
 end
