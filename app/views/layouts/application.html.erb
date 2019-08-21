@@ -34,7 +34,7 @@
           
           </ul>
 
-        
+        <img id = "image_logo" src="../assets/junkfood_logo.png">
 
           <ul id= "dropdown_button" class = "nav navbar-nav navbar-right">
             <li id = "nav_button" class = "dropdown"> <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown" role = "button" aria-expanded = "false"> Genres <span class = "caret"> </span></a> 
@@ -57,7 +57,7 @@
                   </li>
                 <%end%>
               </ul>
-            </li>
+            </li> 
           </ul>
         </nav>
       </div>
@@ -65,5 +65,10 @@
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
     <%= yield %>
+      <footer id= "footer">
+        <% unless user_signed_in? %>
+                <h3 id="footer_link_text"><%= link_to "Sign Up", new_user_registration_path%> / <%= link_to "Log In", new_user_session_path%> to write a review!</h3>
+        <% end %>
+      </footer>
   </body>
 </html>

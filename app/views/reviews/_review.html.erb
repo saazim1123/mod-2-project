@@ -1,6 +1,6 @@
 <p id= "review rating"> <%= review.rating %> / 5</p>
 <p id= "review"> <%= review.content %></p>
-<p> <%= review.user.email%> </p>
+<p id= "review"> <%= review.user.email%> </p>
 <div class= "edit-delete-user">
 <%if user_signed_in? %>
     <%if Review.find_by(user_id: current_user.id) %> <br>

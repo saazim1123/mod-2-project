@@ -1,7 +1,9 @@
 
-<h1><%= @game.title%></h1>
-
-<h3 class="avg-rating">Average Rating:  </h3>
+<h1 id = "game_details"><%= @game.title%></h1>
+<br>
+<img id="unavail" src='../assets/jf_letters_unavail.png'>
+<br>
+<h3 id="game_details">Average Rating:  </h3>
 <h4 id = "game_details"> <%= @average_review %></h4>
 
 <div>
@@ -11,12 +13,13 @@
 </div>
 
 <div>
-    <h2>Available on the following platform(s):</h2>
+    <h2 id = "game_details">Available on the following platform(s):</h2>
+    <br>
     <% @game.platforms.each do |platform| %>
     <h2 id= "game_details"> <%= "| #{platform.name} |" %> </h2>
     <% end %>
 </div>
-
+<br>
 <div class ="row">
 
     <div id= "review_show_box">
@@ -24,19 +27,14 @@
 
     <%if user_signed_in? %>
             <% if @game.reviews.count == 0 %>
-            <h3>Be the first the review this game!</h3>
+            <h3 id="game_details">Be the first the review this game!</h3>
+            <br>
             <% end %>
-        <h3><%= link_to "Write a review for #{@game.title}", new_game_review_path(@game) %></h3>
+            <br>
+        <h3><%= link_to "Click here to write a review for #{@game.title}", new_game_review_path(@game) %></h3>
         <%if Review.find_by(user_id: current_user.id) %>    
         <%end%>
     <%end%>
 
     </div>
 </div>
-
-
-<footer id= "footer">
-    <% unless user_signed_in? %>
-            <h3 id="footer_link_text"><%= link_to "Sign Up", new_user_registration_path%> / <%= link_to "Log In", new_user_session_path%> to write a review!</h3>
-    <% end %>
-</footer>
