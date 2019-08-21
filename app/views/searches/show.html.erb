@@ -1,16 +1,17 @@
+
+
 <h2> Search Results </h2>
 
 <p> <%= link_to 'Back', new_search_path %> </p>
 
-<% if @search.search_games.empty?%>
-    <p> No Records Found </p>
 
-<% else %>
- <% @search.search_games do |search| %>
+
+    <% @search.find_games do |search| %>
     <%= search.title %>
-    <%= search.genre%>
-  
-    <% end %>
+    
+
 
 
 <% end %>
+
+

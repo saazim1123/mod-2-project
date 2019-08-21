@@ -2,12 +2,12 @@
 
 one:
   keyword: MyString
-  genre: MyString
-  platform: MyString
-  rating: 1
+  game_id: 1
+  genre_id: 1
+  platform_id: 1
 
 two:
   keyword: MyString
-  genre: MyString
-  platform: MyString
-  rating: 1
+  game_id: 1
+  genre_id: 1
+  platform_id: 1
