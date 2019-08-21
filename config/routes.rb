@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :games do
     resources :reviews
   end
-  root 'games#index'
+  # root 'games#index'
+  root 'games#welcome'
   
 end
