@@ -17,13 +17,20 @@
  @import "bootstrap";
 
  #box {
-    background: url("../images/banner_01.png");
+    background-image: url("../assets/banner_01.png");
     margin-top: 2%;
     margin-left: 5%;
     margin-right: 5%;
     background-color: #e1e8e3;
     font-family: Georgia, 'Times New Roman', Times, serif;
  }
+
+ .container {
+    padding-right: 0px;
+    padding-left: 0px; 
+    margin-right: auto;
+    margin-left: auto;
+}
 
  #footer {
     position: fixed;
