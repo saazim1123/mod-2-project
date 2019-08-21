@@ -9,6 +9,8 @@ class GamesController < ApplicationController
         elsif params[:genre].blank? 
             @games = Platform.find_by(name: params[:platform]).games
         end
+
+        
     end
 
     def show
