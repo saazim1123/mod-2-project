@@ -4,14 +4,14 @@ class GamesController < ApplicationController
     def index
         if params[:genre].blank? && params[:platform].blank?
             @games = Game.all
-            @games = Game.where("title LIKE ?", "%#{params[:search]}%")
+            @games = Game.search(params[:search])
         elsif params[:platform].blank?
             @games = Genre.find_by(name: params[:genre]).games
         elsif params[:genre].blank? 
             @games = Platform.find_by(name: params[:platform]).games
         end
 
-        @games = Game.where("title LIKE ?", "%#{params[:search]}%")
+        
         
     end
 
