@@ -10,6 +10,7 @@ class GamesController < ApplicationController
             @games = Platform.find_by(name: params[:platform]).games
         end
 
+        @games = Game.where("title LIKE ?", "%#{params[:search]}%")
         
     end
 
