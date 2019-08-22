@@ -15,6 +15,9 @@ before_action :find_game, only: [:show]
         end  
     end
 
+    def most_played
+    end
+
     def show
         if @game.reviews.blank?
             @average_review = "No Reviews have been added to this game"

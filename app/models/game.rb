@@ -13,4 +13,16 @@ class Game < ApplicationRecord
             Game.all
         end
     end
+
+    def self.most_played
+        all.max_by(3){|game| game.reviews.count}
+    end
+
+    def self.top_rated
+        all_with_reviews.max_by(10){|game| game.reviews.average(:rating)}
+    end
+
+    def self.all_with_reviews
+        all.select{|game| game.reviews.length > 0}
+    end
 end

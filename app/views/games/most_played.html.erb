@@ -1,0 +1,12 @@
+<br>
+<h1>Top 3 Most Played Games</h1>
+<% Game.most_played.each do |game| %>
+<h2><%= game.title %></h2>
+<% end %>
+
+<br>
+<br>
+<h1>Top 10 Highest Rated Games</h1>
+<% Game.top_rated.each do |game| %>
+<h2><%= game.title %></h2>
+<% end %>
