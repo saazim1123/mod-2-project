@@ -112,6 +112,13 @@
     margin: 10px;
 }
 
+.nav > li > a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 25px;
+}
+
 #game_list {
     list-style: none;
     display: inline-block;
