@@ -1,0 +1,20 @@
+<br>
+<h1 id = "game_details">Top 3 Most Played Games</h1>
+<br>
+<% Game.most_played.each do |game| %>
+<br>
+<h2 id = "game_details"><%= link_to "#{game.title}", game_path(game) %></h2>
+<br>
+<% end %>
+
+<br>
+<br>
+<h1 id = "game_details">Top 10 Highest Rated Games</h1>
+<br>
+<% Game.top_rated.each do |game| %>
+<br>
+<h2 id = "game_details"><%= link_to "#{game.title}", game_path(game) %></h2>
+<br>
+<% end %>
+<div id="some_space">
+</div>

@@ -13,6 +13,11 @@
  *= require_tree .
  *= require_self
  */
+$light-background: #dddbdb;
+$light-text: #f4f4f4;
+$dark-background: #000000;
+$dark-text: #000000;
+
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
@@ -150,9 +155,16 @@
 }
 
 #game_details {
+    @if $light_background {
     display: inline-block;
-    color: #f4f4f4;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    color: $dark-text;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+    } 
+//  @if $dark-background {
+//     display: inline-block;
+//      color: $light-text;
+//       text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+//    }
 }
 
 #game_details a {
@@ -163,12 +175,22 @@
 #review {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 20px;
-    color: #f4f4f4;
+    color: $dark-text;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 25px;
+    display: inline-block;
 }
 
 #review\ rating {
     font-size: 20px;
-    color: #f4f4f4;
+    color: $dark-text;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+    background-color: #f4f4f4;
+    padding: 10px 10px 15px 10px;
+    border-radius: 25px;
+    display: inline-block;
 }
 
 #review_show_box {
@@ -198,5 +220,12 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
     text-decoration: none;
     font-size: 16px;
     margin: 4px 2px;
+    color: #000000;
   }
-//   
+// 
+
+// Make Room
+#some_space {
+    padding-bottom: 200px;
+}
+//

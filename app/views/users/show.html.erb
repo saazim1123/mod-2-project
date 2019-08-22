@@ -7,9 +7,9 @@
 <% end %>
 <%= button_to "Edit your review for #{review.game.title}", new_game_review_path(review.game), method: :get %>
 <%= button_to "Delete your review for #{review.game.title}", game_review_path(review.game, review), method: :delete, data: { confirm: "Are you sure?"} %>
-<h2 id = "game_details">Your rating: <%= review.rating  %> / 5</h2>
+<h2 id = "review">Your rating: <%= review.rating  %> / 5</h2>
     <br>
-<h2 id = "game_details"><%= review.content  %></h2>
+<h2 id = "review"><%= review.content  %></h2>
     <br>
     <br>
     <br>

@@ -1,9 +1,11 @@
 <p id= "review rating"> <%= review.rating %> / 5</p>
+<br>
 <p id= "review"> <%= review.content %></p>
-<p id= "review"> <%= review.user.email%> </p>
+<br>
+<p id= "review"><i> <%= review.user.email%></i></p>
 <div class= "edit-delete-user">
 <%if user_signed_in? %>
-    <%if Review.find_by(user_id: current_user.id) %> <br>
+    <%if review.user_id == current_user.id %> <br>
             <h3><%= button_to 'Edit Review', edit_game_review_path(review.game, review), method: :get %></h3>
             <h3><%= button_to 'Delete Review', game_review_path(review.game, review), method: :delete, data: { confirm: "Are you sure?"} %></h3>      
     <%end%>
