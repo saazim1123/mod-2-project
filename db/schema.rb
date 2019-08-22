@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_21_105219) do
+ActiveRecord::Schema.define(version: 2019_08_21_164649) do
 
   create_table "game_genres", force: :cascade do |t|
     t.integer "game_id"
@@ -51,9 +51,9 @@ ActiveRecord::Schema.define(version: 2019_08_21_105219) do
 
   create_table "searches", force: :cascade do |t|
     t.string "keyword"
-    t.string "genre"
-    t.string "platform"
-    t.integer "rating"
+    t.integer "game_id"
+    t.integer "genre_id"
+    t.integer "platform_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

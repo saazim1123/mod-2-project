@@ -1,11 +1,18 @@
 class Search < ApplicationRecord
-    def search_games
-        games = Game.all
+   
+    def games
+        @games ||= find_games
+    end
 
-        games = Game.where(["title LIKE ?", "%#{keyword}%"]) if keyword.present?
-        games = Game.where(["genre LIKE ?", genre]) if genre.present?
-        games = Game.where(["platform LIKE ?", platform]) if platform.present?
+private 
 
+    def find_games
+        games = Game.order(:name)
+        games = games.where("title LIKE ?", "%#{keyword}%") if keyword.present?
+        games = games.where(genre_id: genre_id) if genre_id.present?
+        games = games.where(platform_id: platform_id) if platform_id.present?
         return games
     end
 end
+
+
