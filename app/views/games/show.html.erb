@@ -30,7 +30,7 @@
 <div class ="row">
 
     <div id= "review_show_box">
-    <%= render @game.reviews %>
+    <h2 id ="game_details"><%= render @game.reviews %></h2>
 
     <%if user_signed_in? %>
             <% if @game.reviews.count == 0 %>

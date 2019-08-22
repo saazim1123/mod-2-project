@@ -1,0 +1,17 @@
+<br>
+<h1><u><%= current_user.email %>'s Profile Page</u></h1>
+    <% current_user.reviews.each do |review| %>
+<h2 id = "game_details"><%= link_to "#{review.game.title}", game_path(review.game)  %> || </h2>
+    <% review.game.platforms. each do |platform| %>
+<h2 id = "game_details"><%= platform.name %> || </h2>
+<% end %>
+<%= button_to "Edit your review for #{review.game.title}", new_game_review_path(review.game), method: :get %>
+<%= button_to "Delete your review for #{review.game.title}", game_review_path(review.game, review), method: :delete, data: { confirm: "Are you sure?"} %>
+<h2 id = "game_details">Your rating: <%= review.rating  %> / 5</h2>
+    <br>
+<h2 id = "game_details"><%= review.content  %></h2>
+    <br>
+    <br>
+    <br>
+<% end %>
+<h4 id ="request_delete_account">If you would like to delete your account, please send a request to TeamJunkFood@JunkFood.com</h4>
