@@ -4,14 +4,20 @@
 
 <p> <%= link_to 'Back', new_search_path %> </p>
 
+<% if @search
 
-
-    <% @search.find_games do |search| %>
-    <%= search.title %>
+    
+    <h1> <%= @search.games[2].title %> </h1>
+ 
     
 
 
 
-<% end %>
+    
+<%end%>
+
+   
+
+
 
 
