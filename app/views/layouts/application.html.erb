@@ -14,13 +14,8 @@
         <div class = "container">
 
           
-
-          <div id = "nav_button" class = "navbar-header">
-            <%= link_to 'All Games', games_path, class: "navbar-brand" %>
-            
-          </div>
-      
           <ul class = "nav navbar-nav">
+            <li id = "nav_button"><%= link_to 'All Games', games_path %> </li>
             
             
             <% if user_signed_in? %>
