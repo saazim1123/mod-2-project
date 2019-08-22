@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :games do
     resources :reviews
   end
-  root 'games#index'
+  resources :users, only: [:show]
+  # root 'games#index'
+  root 'games#welcome'
   
 end

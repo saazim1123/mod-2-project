@@ -24,7 +24,7 @@
             
             
             <% if user_signed_in? %>
-            <li id = "nav_button">  <%= link_to current_user.email , games_path %>  </li>
+            <li id = "nav_button">  <%= link_to current_user.email , user_path(current_user) %>  </li>
             <li id = "nav_button"> <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %> </li>
             
             <%else%>
@@ -34,7 +34,7 @@
           
           </ul>
 
-        <img id = "image_logo" src="../assets/junkfood_logo.png">
+        <a href= "/" ><img id = "image_logo" src="../assets/junkfood_logo_update.png"></a>
 
         <ul id= "dropdown_button" class = "nav navbar-nav navbar-right">
           <li id = "nav_button" class = "dropdown"> <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown" role = "button" aria-expanded = "false"> Genres <span class = "caret"> </span></a> 
@@ -63,23 +63,6 @@
   
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-
-          <ul class = "nav navbar-nav navbar-right">
-            <li id = "nav_button" class = "dropdown"> <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown" role = "button" aria-expanded = "false"> Platforms <span class = "caret"> </span></a> 
-              <ul class = "dropdown-menu" role ="menu "> 
-                <% Platform.all.each do |platform| %>
-                  <li>
-                    <%= link_to platform.name, games_path(platform: platform.name) %>
-                  </li>
-                <%end%>
-              </ul>
-            </li> 
-          </ul>
-        </nav>
-      </div>
-    
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
 
     <%= yield %>
       <footer id= "footer">
