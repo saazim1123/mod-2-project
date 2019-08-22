@@ -6,7 +6,7 @@
     <%= submit_tag "Search" %>
 <% end %>
 <br>
-<%= button_to 'Most Played and Top Rated Games', most_played_path %><br>
+<%= button_to 'Most Played and Top Rated Games', most_played_path, method: :get %><br>
 
 <% if @games.count == 0%>
     <h4>There are no games in this category</h4>

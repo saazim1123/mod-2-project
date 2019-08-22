@@ -15,6 +15,8 @@ Can filter games by genre
 Can search for a specific game
 Can view other people's reviews on games
 Can see a game's average rating
+A user can see the top 3 most played games
+A user can see the top 10 highest rated games 
 
 A user cannot delete another user's review.
 A user cannot edit another user's review.
